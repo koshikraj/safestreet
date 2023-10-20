@@ -1,4 +1,4 @@
-# 🛒 SafeStreet
+# 💲 SafeStreet
 
 Safe module marketplace that incentivizes module developers
 
