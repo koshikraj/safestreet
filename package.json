@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@safe-global/safe-core-protocol": "../safe-core-protocol/"
+  }
+}
