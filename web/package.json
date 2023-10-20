@@ -19,7 +19,7 @@
     "@mui/material": "^5.14.0",
     "@safe-global/safe-apps-provider": "^0.17.1",
     "@safe-global/safe-apps-sdk": "^8.0.0",
-    "@safe-global/safe-core-protocol": "../../safe-core-protocol/",
+    "@safe-global/safe-core-protocol": "../safe-core-protocol/",
     "@tabler/icons": "^1.79.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",

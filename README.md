@@ -20,8 +20,18 @@ SafeStreet extends the `SafeProtocolManager` `SafeProtocolRegistry` from [Safe{C
 
 ## Quick start
 
-### `git clone --recurse-submodules https://github.com/koshikraj/safestreet`
+### Clone repo
 
-### `yarn`
+```
+git clone --recurse-submodules https://github.com/koshikraj/safestreet
+```
 
-### `yarn start`
+### Install dependencies and run
+
+### 
+
+```
+cd web
+yarn install
+yarn start
+```
