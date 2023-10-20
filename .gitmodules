@@ -1,0 +1,3 @@
+[submodule "safe-core-protocol"]
+	path = safe-core-protocol
+	url = https://github.com/koshikraj/safe-core-protocol
