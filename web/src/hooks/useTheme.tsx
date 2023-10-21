@@ -8,7 +8,7 @@ import { ColorScheme } from "@mantine/core";
 export const useTheme = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
-    defaultValue: "dark",
+    defaultValue: "light",
     getInitialValueInEffect: true,
   });
 

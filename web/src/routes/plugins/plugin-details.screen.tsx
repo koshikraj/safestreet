@@ -201,15 +201,28 @@ export const PluginDetailsScreen = () => {
         </Group>
         </Stack>
             
-            <Text mt={"lg"} > Plugin subscription details
-            </Text>
+          <Text mt={"lg"} > Plugin subscription details
+          </Text>
 
-            <Group noWrap>
+          <Group noWrap>
           <Avatar src={(tokenList.filter((tokenInfo: any) => { return  tokenInfo.value == publishDetails.token}))[0]?.image} />
   
           <div>
             
             <Text size="lg">{ `${formatEther(publishDetails.amount?publishDetails.amount: 0)}  ${(tokenList.filter((tokenInfo: any) => { return  tokenInfo.value == publishDetails.token}))[0]?.label}`}</Text>
+            <Text size="xs" >
+              {(tokenList.filter((tokenInfo: any) => { return  tokenInfo.value == publishDetails.token}))[0]?.description}
+            </Text>
+          </div>
+        </Group>
+
+        <Text mt={"lg"} > Total module earnings
+          </Text>
+
+          <Group noWrap>
+          <div>
+            
+            <Text size="lg">{ `${formatEther(publishDetails.earnings ? publishDetails.earnings: 0)}  ${(tokenList.filter((tokenInfo: any) => { return  tokenInfo.value == publishDetails.token}))[0]?.label}`}</Text>
             <Text size="xs" >
               {(tokenList.filter((tokenInfo: any) => { return  tokenInfo.value == publishDetails.token}))[0]?.description}
             </Text>
