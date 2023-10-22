@@ -16,7 +16,7 @@ function Home() {
     <Container>
     <Container className={classes.voucherScreenContainer}>
       <Container sx={{ padding: 0, marginTop: "150px", display: "flex", alignItems: "center",  justifyContent: "center"}}>
-      <Paper className={classes.settingsContainer} shadow="xl" withBorder radius="md" p="xl" style={{
+      <Paper className={classes.settingsContainer} shadow="xl"  radius="md" p="xl" style={{
                     marginTop: 30, 
                     // width: 700
                   }}>
@@ -24,15 +24,15 @@ function Home() {
        <img className={classes.heroImage} src={logo} />
           </div>
         <div style={{ paddingLeft: 80,  paddingRight: 80,  display: "flex",  justifyContent: "center"}}>
-        <p className={classes.p}>Developer hub for Safe devs to monetize their published <b>modules</b></p> 
+        <p className={classes.p}>Safe Developer Hub to monetize their published <b>modules</b></p> 
       </div>
       
       <div style={{ padding: 0,  display: "flex",  justifyContent: "center", marginBottom: "20px"}}>
        <img className={classes.heroImage} src={logofooter} />
           </div>
-      <div style={{ padding: 0,  display: "flex",  justifyContent: "center"}}>
+      <div style={{ padding: 20,  display: "flex",  justifyContent: "center"}}>
         
-      
+      <Group >
       <Button
                 onClick={() => { navigate(RoutePath.plugins) }}
                 size="lg"
@@ -45,6 +45,16 @@ function Home() {
               >
                 Get Started
               </Button>
+              <Button
+                onClick={() => { window.open("https://app.safe.global/share/safe-app?appUrl=https://safestreet.xyz&chain=gor") }}
+                size="lg"
+                radius="md"
+                color={ "gray" }
+                variant={ "outline"  }
+              >
+               {`Try On Safe {Wallet}`}
+              </Button>
+              </Group>
       </div>
       
        </Paper>

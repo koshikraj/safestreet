@@ -97,6 +97,11 @@ const config: HardhatUserConfig = {
       ...sharedNetworkConfig,
       url: `https://goerli.optimism.io	`,
     },
+    polygon: {
+      ...sharedNetworkConfig,
+      url: `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`,
+      gas: 4522512,
+  },
   },
   deterministicDeployment,
   etherscan: {
