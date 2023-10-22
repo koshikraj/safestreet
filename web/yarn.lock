@@ -3221,7 +3221,7 @@
     "@safe-global/safe-gateway-typescript-sdk" "^3.5.3"
     viem "^1.0.0"
 
-"@safe-global/safe-core-protocol@../safe-core-protocol/":
+"@safe-global/safe-core-protocol@../../safe-core-protocol/":
   version "0.3.0-alpha.1"
   dependencies:
     hardhat-dependency-compiler "^1.1.3"

@@ -54,6 +54,7 @@ import {
   loadPublishDetails,
   publishWithPayment,
   loadPublisher,
+  withdrawFunds,
 } from '../../logic/safestreet'
 import { formatEther, parseEther } from 'ethers'
 
@@ -288,8 +289,9 @@ export const PluginDetailsScreen = () => {
                     </div>
                   </Group>
 
+                         
                   <Text mt={'lg'}> Total module earnings</Text>
-
+                  <Group> 
                   <Group noWrap>
                     <div>
                       <Text size='lg'>{`${formatEther(
@@ -308,6 +310,18 @@ export const PluginDetailsScreen = () => {
                       </Text>
                     </div>
                   </Group>
+
+                  <Button
+                onClick={async () => {
+                  await withdrawFunds(pluginDetails.address)
+                }}
+                leftIcon={<IconSettings />}
+                color={'gray'}
+                variant={'outline'}
+              >
+                Withdraw Earnings
+              </Button>
+              </Group>
 
                   {!publishDetails && (
                     <Group
@@ -345,7 +359,7 @@ export const PluginDetailsScreen = () => {
                     }}
                     sx={{
                       display: 'flex',
-                      flexDirection: 'column',
+                      // flexDirection: 'column',
 
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -353,7 +367,7 @@ export const PluginDetailsScreen = () => {
                     }}
                   >
                     Save Settings
-                  </Button>
+                  </Button>           
                 </Container>
               </Group>
             </Paper>
@@ -632,12 +646,12 @@ export const PluginDetailsScreen = () => {
                 <Group>
                   <Avatar
                     size={60}
-                    src={loadPublisher(publishDetails.publisher)?.logo}
+                    src={loadPublisher(pluginDetails.publisher)?.logo}
                     alt='attester image'
                   />
                   <Stack>
                     <Text className={classes.link} size='md' weight={600}>
-                      {loadPublisher(publishDetails.publisher)?.name}
+                      {loadPublisher(pluginDetails.publisher)?.name}
                     </Text>
 
                     <Text

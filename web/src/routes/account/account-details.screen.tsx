@@ -147,7 +147,7 @@ export const AccountDetailsScreen = () => {
 
                 <Group>
                   <Text size='m' weight={600}>
-                    🛡️ Trust Score
+                    🛡️ Dev trust Score
                   </Text>{' '}
                   <Rating
                     readOnly

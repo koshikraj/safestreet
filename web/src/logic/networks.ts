@@ -100,7 +100,7 @@ export const networks = {
     name: 'Polygon',
     type: 'Mainnet',
     chainId: 137,
-    url: "https://rpc.ankr.com/polygon",
+    url: `https://polygon-mainnet.infura.io/v3/${INFURA_API_KEY}`,
     safeService: "https://safe-transaction-polygon.safe.global",
     blockExplorer: "https://polygonscan.com",
     api: "",

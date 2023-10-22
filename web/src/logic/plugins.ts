@@ -24,10 +24,11 @@ export const loadPluginDetails = async(pluginAddress: string): Promise<PluginDet
 }
 
 
-export const loadPlugins = async(filterFlagged: boolean = true): Promise<string[]> => {
+export const loadPlugins = async(filterFlagged: boolean = true): Promise<any[]> => {
     const registry = await getRegistry()
     const addedEvents = (await registry.queryFilter(registry.filters.ModulePublished)) as EventLog[]
-    const addedIntegrations = addedEvents.map((event: EventLog) => event.args.module)
+    const addedIntegrations = addedEvents.map((event: EventLog) => { return({module: event.args.module, publisher: event.args.publisher})})
+
     if (!filterFlagged) return addedIntegrations;
     const flaggedEvents = (await registry.queryFilter(registry.filters.ModuleFlagged)) as EventLog[]
     const flaggedIntegrations = flaggedEvents.map((event: EventLog) => event.args.module)

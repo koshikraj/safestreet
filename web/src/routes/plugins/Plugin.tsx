@@ -32,9 +32,10 @@ const PluginMeta: FunctionComponent<PluginMetaProps> = ({ metadata }) => {
 
 type PluginProps = {
   address: string
+  publisher: string
 }
 
-export const Plugin: FunctionComponent<PluginProps> = ({ address }) => {
+export const Plugin: FunctionComponent<PluginProps> = ({ address, publisher }) => {
   const [details, setDetails] = useState<PluginDetails | undefined>(undefined)
   const blocky = blockies.create({ seed: address }).toDataURL()
   const navigate = useNavigate()
@@ -43,7 +44,6 @@ export const Plugin: FunctionComponent<PluginProps> = ({ address }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(address)
         setDetails(await loadPluginDetails(address))
       } catch (e) {
         console.warn(e)
@@ -53,13 +53,14 @@ export const Plugin: FunctionComponent<PluginProps> = ({ address }) => {
   }, [address])
 
   const handleClick = (details: any) => {
-    setPluginDetails({ ...details, address: address })
+    setPluginDetails({ ...details, address: address, publisher: publisher })
     navigate(RoutePath.pluginDetails)
   }
 
   return (
     <GenericCard
       title={details?.metadata.name}
+      description={publisher}
       image={details?.metadata.iconUrl}
       enabled={details?.enabled}
       loading={details === undefined}

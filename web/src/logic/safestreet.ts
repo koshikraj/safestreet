@@ -19,7 +19,6 @@ import { getJsonRpcProvider, getProvider } from './web3'
 
 import Safe from '../assets/icons/safe.png'
 import OZ from '../assets/icons/oz.png'
-import Certik from '../assets/icons/certik.png'
 
 const PUBLISHER_INFO = {
   '0xaA498424C846c44e2029E1835f9549d86d7C5E44': {
@@ -28,7 +27,7 @@ const PUBLISHER_INFO = {
     name: 'Vitalik Buterin',
     trust: 9,
   },
-  '0x9ccCA0a968A9bc5916E0de43Ea2D68321655ae67': {
+  '0x958543756A4c7AC6fB361f0efBfeCD98E4D297Db': {
     logo: OZ,
     link: 'https://www.openzeppelin.com',
     name: 'OpenZeppelin',
@@ -79,13 +78,20 @@ export const publishWithPayment = async (
   await publishTx.wait()
 }
 
-export const fullfillePayment = async (
-  plugin: string,
-  token: string,
-  amount: string
-) => {
-  if (!(await isConnectedToSafe())) throw Error('Not connected to a Safe')
+export const withdrawFunds = async (plugin: string) => {
 
+    const provider =  new ethers.BrowserProvider(window.ethereum)
+    const safeStreet = await getSafeStreet(await provider.getSigner())
+    const withdrawTx = await safeStreet.withdrawFunds(plugin)
+
+    await withdrawTx.wait()
+
+}
+
+export const fullfillePayment = async (plugin: string, token: string, amount: string ) => {
+
+
+  if (!(await isConnectedToSafe())) throw Error('Not connected to a Safe')
   const safeInfo = await getSafeInfo()
   const safeStreet = await getSafeStreet()
   const safeStreetToken = await getSafeStreetToken()

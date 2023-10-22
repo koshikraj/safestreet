@@ -14,17 +14,19 @@ import Safe from '../../assets/icons/safe.png'
 import Session from '../../assets/icons/session.png'
 import Email from '../../assets/icons/mail.png'
 import NFT from '../../assets/icons/ape.png'
+import { loadPublisher } from '../../logic/safestreet'
 
 export interface GenericCardProps {
   enabled?: boolean
   title?: string
+  description?: string
   image?: string
   loading?: boolean
   onClick?: any
 }
 
 export const GenericCard: React.FC<GenericCardProps> = (props) => {
-  const { enabled, width, title, loading = true, onClick, image } = props
+  const { description, enabled, width, title, loading = true, onClick, image } = props
 
   //const { classes } = useStyles()
   const { classes } = useCardStyles()
@@ -98,14 +100,12 @@ export const GenericCard: React.FC<GenericCardProps> = (props) => {
             <div>
               <p className={classes.pluginName}>{title}</p>
               <p className={classes.description}>
-                Description ewqsf dsfgdsgs sdloremf Lorem ipsum dolor sit amet,
-                consectetur.
+                Published By: {loadPublisher(description).name}
               </p>
+              
             </div>
 
             <div className={classes.badge}>
-              <Badge color='green'>Free</Badge>
-
               {enabled && (
                 <Badge sx={{ marginLeft: '4px' }} color='green'>
                   Enabled
@@ -124,7 +124,6 @@ export const GenericCard: React.FC<GenericCardProps> = (props) => {
 
             <div>
               <p className='pluginName skeleton'></p>
-              <p className='description skeleton'></p>
             </div>
 
             <div>

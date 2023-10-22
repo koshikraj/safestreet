@@ -11,8 +11,7 @@ const mockPlugins = ['1', '2']
 function PluginList() {
   const { classes } = useStyles()
   const [showFlagged, setFilterFlagged] = useState<boolean>(false)
-  const [plugins, setPlugins] = useState<string[]>([])
-  console.log(plugins)
+  const [plugins, setPlugins] = useState<any[]>([])
   const fetchData = useCallback(async () => {
     try {
       setPlugins([])
@@ -52,7 +51,7 @@ function PluginList() {
             Available Plugins
           </h2>
           <Button color='green' variant='filled'>
-            Submit Plugin
+            Submit Plugin (Soon)
           </Button>
         </Container>
         <div
@@ -80,52 +79,13 @@ function PluginList() {
         </div>
         <div className={classes.actionsContainer}>
           {plugins.map((plugin) => (
-            <Plugin address={plugin} />
+            <Plugin address={plugin.module} publisher={plugin.publisher} />
           ))}
-          {/* {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
-
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
+        
           {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
+            mockPlugins.map((plugin) => <Plugin address={plugin} publisher={''}/>)}
 
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
 
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
-
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
-
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
-
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)}
-
-          {plugins.map((plugin) => (
-            <Plugin address={plugin} />
-          ))}
-          {!plugins.length &&
-            mockPlugins.map((plugin) => <Plugin address={plugin} />)} */}
         </div>
       </Container>
     </Container>
