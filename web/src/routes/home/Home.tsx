@@ -46,7 +46,7 @@ function Home() {
                 Get Started
               </Button>
               <Button
-                onClick={() => { window.open("https://app.safe.global/share/safe-app?appUrl=https://safestreet.xyz&chain=gor") }}
+                onClick={() => { window.open("https://app.safe.global/share/safe-app?appUrl=https://safestreet.xyz&chain=matic") }}
                 size="lg"
                 radius="md"
                 color={ "gray" }
