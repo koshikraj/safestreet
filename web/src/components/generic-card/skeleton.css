@@ -1,0 +1,42 @@
+.cardContainer.skeleton {
+  padding: 14px;
+  border: 1px solid #d9e1ec;
+  border-radius: 4px;
+  background: #fff;
+  max-width: 450px;
+}
+
+.imageContainer.skeleton {
+  height: 68px;
+  width: 68px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(128, 128, 128, 0.15) 0px 2px 4px 0px;
+}
+
+.image.skeleton {
+  height: 40px;
+  width: 40px;
+  background: #f0f0f0;
+}
+
+.pluginName.skeleton {
+  width: 100px;
+  height: 20px;
+  background: #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.description.skeleton {
+  width: 250px;
+  height: 16px;
+  background: #f0f0f0;
+}
+
+.badge.skeleton {
+  width: 60px;
+  height: 20px;
+  background: #f0f0f0;
+}
